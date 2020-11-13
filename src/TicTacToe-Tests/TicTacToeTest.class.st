@@ -5,7 +5,7 @@ Class {
 		'anSquare',
 		'aBoard'
 	],
-	#category : 'TicTacToe'
+	#category : #'TicTacToe-Tests'
 }
 
 { #category : #'as yet unclassified' }
