@@ -1,0 +1,15 @@
+{
+	"commentStamp" : "",
+	"super" : "Object",
+	"category" : "TicTacToe",
+	"classinstvars" : [
+		"aGrid"
+	],
+	"pools" : [ ],
+	"classvars" : [ ],
+	"instvars" : [
+		"squares"
+	],
+	"name" : "TicTacToeBoard",
+	"type" : "normal"
+}

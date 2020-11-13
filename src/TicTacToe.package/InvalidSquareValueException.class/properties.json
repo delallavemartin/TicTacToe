@@ -1,0 +1,11 @@
+{
+	"commentStamp" : "",
+	"super" : "Exception",
+	"category" : "TicTacToe",
+	"classinstvars" : [ ],
+	"pools" : [ ],
+	"classvars" : [ ],
+	"instvars" : [ ],
+	"name" : "InvalidSquareValueException",
+	"type" : "normal"
+}

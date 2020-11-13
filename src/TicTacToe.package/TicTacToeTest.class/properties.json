@@ -1,0 +1,14 @@
+{
+	"commentStamp" : "",
+	"super" : "TestCase",
+	"category" : "TicTacToe",
+	"classinstvars" : [ ],
+	"pools" : [ ],
+	"classvars" : [ ],
+	"instvars" : [
+		"anSquare",
+		"aBoard"
+	],
+	"name" : "TicTacToeTest",
+	"type" : "normal"
+}
