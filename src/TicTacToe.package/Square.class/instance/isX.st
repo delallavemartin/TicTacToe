@@ -1,3 +1,0 @@
-accessors
-isX
-	^value = 'X'.
