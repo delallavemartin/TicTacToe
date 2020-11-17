@@ -38,9 +38,9 @@ TicTacToeTest >> testBoardSetsXOnCenter [
 { #category : #'as yet unclassified' }
 TicTacToeTest >> testBoardSetsYOnRightBottomSquare [
 	
-	aBoard fillWith: 'Y' at: #nineth .
+	aBoard fillWith: 'O' at: #nineth .
 	
-	self assert: (aBoard squareAt: #nineth) isY .
+	self assert: (aBoard squareAt: #nineth) isO .
 	
 
 ]
@@ -94,7 +94,7 @@ TicTacToeTest >> testCreateAnSquareWithX [
 { #category : #'as yet unclassified' }
 TicTacToeTest >> testCreateAnSquareWithY [
 
-	anSquare with: 'Y'.
+	anSquare with: 'O'.
 	
-	self assert: anSquare isY.
+	self assert: anSquare isO.
 ]

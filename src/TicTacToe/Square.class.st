@@ -29,21 +29,26 @@ Class {
 	#category : #TicTacToe
 }
 
+{ #category : #initialization }
+Square >> initialize [
+	value:= ''
+]
+
+{ #category : #'var accessors' }
+Square >> isO [
+	^self isX not.
+]
+
 { #category : #accessors }
 Square >> isX [
 	^value = 'X'.
 ]
 
-{ #category : #'var accessors' }
-Square >> isY [
-	^self isX not.
-]
-
 { #category : #setter }
-Square >> with: aString [ 
-	value notNil ifTrue: [SquareAlreadyFilledException  signal. ].
-   (aString = 'X' or: aString = 'Y')
-	ifTrue:[value := aString]
-	ifFalse:[InvalidSquareValueException signal.]
-	
+Square >> with: aString [
+	value ~= ''
+		ifTrue: [ SquareAlreadyFilledException signal ].
+	(aString = 'X' or: aString = 'O')
+		ifTrue: [ value := aString ]
+		ifFalse: [ InvalidSquareValueException signal ]
 ]
