@@ -26,21 +26,21 @@ TicTacToeTest >> setUp [
 ]
 
 { #category : #'as yet unclassified' }
-TicTacToeTest >> testBoardSetsXOnCenter [
+TicTacToeTest >> testBoardSetsOOnRightBottomSquare [
 	
-	aBoard fillWith: 'X' at: #fifth.
+	aBoard fillWith: 'O' at: #nineth .
 	
-	self assert: (aBoard squareAt: #fifth) isX .
+	self assert: (aBoard squareAt: #nineth) isO .
 	
 
 ]
 
 { #category : #'as yet unclassified' }
-TicTacToeTest >> testBoardSetsYOnRightBottomSquare [
+TicTacToeTest >> testBoardSetsXOnCenter [
 	
-	aBoard fillWith: 'O' at: #nineth .
+	aBoard fillWith: 'X' at: #fifth.
 	
-	self assert: (aBoard squareAt: #nineth) isO .
+	self assert: (aBoard squareAt: #fifth) isX .
 	
 
 ]
@@ -84,17 +84,17 @@ TicTacToeTest >> testCreateAnSquareWithInvalidValue [
 ]
 
 { #category : #'as yet unclassified' }
+TicTacToeTest >> testCreateAnSquareWithO [
+
+	anSquare with: 'O'.
+	
+	self assert: anSquare isO.
+]
+
+{ #category : #'as yet unclassified' }
 TicTacToeTest >> testCreateAnSquareWithX [
 
 	anSquare with: 'X'.
 	
 	self assert: anSquare isX.
-]
-
-{ #category : #'as yet unclassified' }
-TicTacToeTest >> testCreateAnSquareWithY [
-
-	anSquare with: 'O'.
-	
-	self assert: anSquare isO.
 ]
