@@ -96,7 +96,7 @@ TicTacToeTest >> testCreateAnSquareWithX [
 { #category : #'as yet unclassified' }
 TicTacToeTest >> testGameSetAnOOnFifthSquareAndTheBoardIsInInvalidStateThenRollbackAndThrowException [
 
-	self assert: [aGame set: 'O' at: #fifth ] expected:  InvalidStateException.
+	self assert: [aGame set: 'O' at: #fifth ] expected: InvalidStateException.
 	self deny: ( aGame has: 'O' on: #fifth ).
 	
 
