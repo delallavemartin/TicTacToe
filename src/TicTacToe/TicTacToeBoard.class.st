@@ -7,7 +7,7 @@ Class {
 	#classInstVars : [
 		'aGrid'
 	],
-	#category : 'TicTacToe'
+	#category : #TicTacToe
 }
 
 { #category : #'as yet unclassified' }
@@ -36,6 +36,32 @@ TicTacToeBoard >> build: aCollection [
 { #category : #'as yet unclassified' }
 TicTacToeBoard >> fillWith: aValue at: aKey [
 	(self squareAt: aKey) with: aValue.
+]
+
+{ #category : #'as yet unclassified' }
+TicTacToeBoard >> isFull [
+	^(((self squareAt: #first) class) = Square )|
+	(((self squareAt: #second) class) = Square )|
+	(((self squareAt: #third) class) = Square )|
+	(((self squareAt: #fourth ) class) = Square )|
+	(((self squareAt: #fifth) class) = Square )|
+	(((self squareAt: #sixth) class) = Square )|
+	(((self squareAt: #seventh ) class) = Square) |
+	(((self squareAt: #eighth ) class) = Square )|
+	(((self squareAt: #nineth ) class) = Square).
+]
+
+{ #category : #'as yet unclassified' }
+TicTacToeBoard >> isValid [
+	^(((self squareAt: #first) class) = Square )|
+	(((self squareAt: #second) class) = Square )|
+	(((self squareAt: #third) class) = Square )|
+	(((self squareAt: #fourth ) class) = Square )|
+	(((self squareAt: #fifth) class) = Square )|
+	(((self squareAt: #sixth) class) = Square )|
+	(((self squareAt: #seventh ) class) = Square) |
+	(((self squareAt: #eighth ) class) = Square )|
+	(((self squareAt: #nineth ) class) = Square).
 ]
 
 { #category : #'as yet unclassified' }
