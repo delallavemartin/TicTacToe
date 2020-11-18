@@ -31,12 +31,12 @@ Class {
 
 { #category : #initialization }
 Square >> initialize [
-	value:= ''
+	value:=''
 ]
 
 { #category : #'var accessors' }
 Square >> isO [
-	^self isX not.
+	^value = 'O'.
 ]
 
 { #category : #accessors }

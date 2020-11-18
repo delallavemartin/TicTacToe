@@ -92,7 +92,58 @@ TicTacToeTest >> testCreateAnSquareWithX [
 ]
 
 { #category : #'as yet unclassified' }
-TicTacToeTest >> testGameStarts [
+TicTacToeTest >> testGameStartsAndIsValid [
+	
+	| aGame |
+	aGame := Game start.
+	
+	self assert: aGame hasValidState .
+	
+
+]
+
+{ #category : #'as yet unclassified' }
+TicTacToeTest >> testWhenBothHavePlayOneTimeThenIsValid [
+	
+	| aGame |
+	aGame := Game start.
+	
+	aGame set: 'X' at: #fifth .
+	aGame set: 'O' at: #third .
+	
+	self assert: aGame hasValidState .
+	
+
+]
+
+{ #category : #'as yet unclassified' }
+TicTacToeTest >> testWhenGameHasOneMoreOThanXThenIsInvalid [
+	
+	| aGame |
+	aGame := Game start.
+	
+	aGame set: 'O' at: #fifth .
+	
+	self deny: aGame hasValidState .
+	
+
+]
+
+{ #category : #'as yet unclassified' }
+TicTacToeTest >> testWhenGameHasOneXMoreThanOThenIsValid [
+	
+	| aGame |
+	aGame := Game start.
+	
+	aGame set: 'X' at: #fifth .
+	
+	self assert: aGame hasValidState .
+	
+
+]
+
+{ #category : #'as yet unclassified' }
+TicTacToeTest >> testWhenGameStartsTheBoardIsFull [
 	
 	| aGame |
 	aGame := Game start.
