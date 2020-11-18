@@ -52,19 +52,6 @@ TicTacToeBoard >> isFull [
 ]
 
 { #category : #'as yet unclassified' }
-TicTacToeBoard >> isValid [
-	^(((self squareAt: #first) class) = Square )|
-	(((self squareAt: #second) class) = Square )|
-	(((self squareAt: #third) class) = Square )|
-	(((self squareAt: #fourth ) class) = Square )|
-	(((self squareAt: #fifth) class) = Square )|
-	(((self squareAt: #sixth) class) = Square )|
-	(((self squareAt: #seventh ) class) = Square) |
-	(((self squareAt: #eighth ) class) = Square )|
-	(((self squareAt: #nineth ) class) = Square).
-]
-
-{ #category : #'as yet unclassified' }
 TicTacToeBoard >> squareAt: aKey [
 	^squares at: aKey.
 ]

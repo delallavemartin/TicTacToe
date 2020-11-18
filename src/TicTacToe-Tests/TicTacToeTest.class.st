@@ -48,7 +48,7 @@ TicTacToeTest >> testBoardSetsXOnCenter [
 { #category : #'as yet unclassified' }
 TicTacToeTest >> testCreateATicTacToeBoard [ 
 
-	self assert: aBoard isValid.
+	self assert: aBoard isFull .
 
 ]
 
@@ -97,7 +97,7 @@ TicTacToeTest >> testGameStarts [
 	| aGame |
 	aGame := Game start.
 	
-	self assert: aGame board isValid .
+	self assert: aGame board isFull .
 	
 
 ]
