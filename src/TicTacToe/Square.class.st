@@ -34,6 +34,11 @@ Square >> initialize [
 	value:=''
 ]
 
+{ #category : #'as yet unclassified' }
+Square >> is: aValue [ 
+	^value = aValue
+]
+
 { #category : #'var accessors' }
 Square >> isO [
 	^value = 'O'.

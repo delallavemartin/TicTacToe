@@ -2,7 +2,9 @@ Class {
 	#name : #Game,
 	#superclass : #Object,
 	#instVars : [
-		'aBoard'
+		'aBoard',
+		'playerOne',
+		'playerTwo'
 	],
 	#classInstVars : [
 		'aBoard'
@@ -24,13 +26,13 @@ Game >> board [
 ]
 
 { #category : #'as yet unclassified' }
-Game >> hasValidBoard [
-	^false
+Game >> has: aValue on: anSquarePosition [  
+	^(aBoard squareAt: anSquarePosition) is: aValue
 ]
 
 { #category : #'as yet unclassified' }
 Game >> hasValidState [
-	^aBoard areTotalXsEqualsOrOneMoreThanOs.
+	^aBoard isValid.
 ]
 
 { #category : #'as yet unclassified' }

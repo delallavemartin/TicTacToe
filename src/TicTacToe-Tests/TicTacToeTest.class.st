@@ -96,10 +96,40 @@ TicTacToeTest >> testCreateAnSquareWithX [
 { #category : #'as yet unclassified' }
 TicTacToeTest >> testGameStartsAndIsValid [
 	
-	| aGame |
-	aGame := Game start.
-	
 	self assert: aGame hasValidState .
+	
+
+]
+
+{ #category : #'as yet unclassified' }
+TicTacToeTest >> testPlayerOneSetAnXOnFifthSquare [
+	
+	| playerOne |
+	playerOne := TicTacToePlayer with: aGame.
+	
+	playerOne plays: 'X' to: #fifth .
+	
+	self assert: (aGame has: 'X' on: #fifth ).
+	
+
+]
+
+{ #category : #'as yet unclassified' }
+TicTacToeTest >> testWhenBoardHasOneMoreOThanXThenIsInvalid [
+	
+	aBoard fillWith: 'O' at: #fifth.
+	
+	self deny: aBoard isValid .
+	
+
+]
+
+{ #category : #'as yet unclassified' }
+TicTacToeTest >> testWhenBoardHasOneXMoreThanOThenIsValid [
+	
+	aBoard fillWith: 'X' at: #fifth.
+	
+	self assert: aBoard isValid .
 	
 
 ]
@@ -107,30 +137,10 @@ TicTacToeTest >> testGameStartsAndIsValid [
 { #category : #'as yet unclassified' }
 TicTacToeTest >> testWhenBothHavePlayOneTimeThenIsValid [
 
-	aGame set: 'X' at: #fifth .
-	aGame set: 'O' at: #third .
+	aBoard fillWith: 'X' at: #fifth.
+	aBoard fillWith: 'O' at: #third .
 	
-	self assert: aGame hasValidState .
-	
-
-]
-
-{ #category : #'as yet unclassified' }
-TicTacToeTest >> testWhenGameHasOneMoreOThanXThenIsInvalid [
-	
-	aGame set: 'O' at: #fifth .
-	
-	self deny: aGame hasValidState .
-	
-
-]
-
-{ #category : #'as yet unclassified' }
-TicTacToeTest >> testWhenGameHasOneXMoreThanOThenIsValid [
-	
-	aGame set: 'X' at: #fifth .
-	
-	self assert: aGame hasValidState .
+	self assert: aBoard isValid .
 	
 
 ]

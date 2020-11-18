@@ -29,15 +29,6 @@ TicTacToeBoard class >> create [
 ]
 
 { #category : #'as yet unclassified' }
-TicTacToeBoard >> areTotalXsEqualsOrOneMoreThanOs [
-	| xsCounts osCounts |
-	xsCounts := (squares select: [ :anSquare | anSquare isX ]) size.
-	osCounts := (squares select: [ :anSquare | anSquare isO ]) size.
-	
-	^xsCounts = osCounts or: xsCounts = (osCounts + 1)
-]
-
-{ #category : #'as yet unclassified' }
 TicTacToeBoard >> build: aCollection [ 
 	squares := aCollection
 ]
@@ -58,6 +49,15 @@ TicTacToeBoard >> isFull [
 	(((self squareAt: #seventh ) class) = Square) |
 	(((self squareAt: #eighth ) class) = Square )|
 	(((self squareAt: #nineth ) class) = Square).
+]
+
+{ #category : #'as yet unclassified' }
+TicTacToeBoard >> isValid [
+	| xsCounts osCounts |
+	xsCounts := (squares select: [ :anSquare | anSquare isX ]) size.
+	osCounts := (squares select: [ :anSquare | anSquare isO ]) size.
+	
+	^xsCounts = osCounts or: xsCounts = (osCounts + 1)
 ]
 
 { #category : #'as yet unclassified' }
