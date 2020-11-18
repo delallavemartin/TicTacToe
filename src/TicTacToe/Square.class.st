@@ -29,6 +29,11 @@ Class {
 	#category : #TicTacToe
 }
 
+{ #category : #'as yet unclassified' }
+Square >> clear [
+	value := ''
+]
+
 { #category : #initialization }
 Square >> initialize [
 	value:=''

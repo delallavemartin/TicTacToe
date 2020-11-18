@@ -94,6 +94,24 @@ TicTacToeTest >> testCreateAnSquareWithX [
 ]
 
 { #category : #'as yet unclassified' }
+TicTacToeTest >> testGameSetAnOOnFifthSquareAndTheBoardIsInInvalidStateThenRollbackAndThrowException [
+
+	self assert: [aGame set: 'O' at: #fifth ] expected:  InvalidStateException.
+	self deny: ( aGame has: 'O' on: #fifth ).
+	
+
+]
+
+{ #category : #'as yet unclassified' }
+TicTacToeTest >> testGameSetAnXInFifthSquareAndTheBoardIsInValidState [
+
+	aGame set: 'X' at: #fifth .
+	self assert: ( aGame has: 'X' on: #fifth ).
+	
+
+]
+
+{ #category : #'as yet unclassified' }
 TicTacToeTest >> testGameStartsAndIsValid [
 	
 	self assert: aGame hasValidState .

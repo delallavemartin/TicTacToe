@@ -37,7 +37,11 @@ Game >> hasValidState [
 
 { #category : #'as yet unclassified' }
 Game >> set: aValue at: anSquarePosition [ 
-	aBoard fillWith: aValue at: anSquarePosition
+	aBoard fillWith: aValue at: anSquarePosition.
+	(aBoard isValid) ifTrue: [ ^self ] .
+	"Rollback play & throw exception"
+	aBoard clearAt: anSquarePosition.
+	InvalidStateException  signal 
 ]
 
 { #category : #'as yet unclassified' }

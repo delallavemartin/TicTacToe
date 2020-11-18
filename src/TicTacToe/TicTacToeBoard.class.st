@@ -34,6 +34,11 @@ TicTacToeBoard >> build: aCollection [
 ]
 
 { #category : #'as yet unclassified' }
+TicTacToeBoard >> clearAt: anSquarePostion [ 
+	(self squareAt:  anSquarePostion) clear.
+]
+
+{ #category : #'as yet unclassified' }
 TicTacToeBoard >> fillWith: aValue at: aKey [
 	(self squareAt: aKey) with: aValue.
 ]

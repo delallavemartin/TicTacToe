@@ -25,5 +25,5 @@ TicTacToePlayer >> playingAt: aTicTacToeGame [
 
 { #category : #'as yet unclassified' }
 TicTacToePlayer >> plays: aValue to: aSquarePosition [ 
-	aGame set: aValue at: aSquarePosition
+	aGame set: aValue at: aSquarePosition .
 ]
