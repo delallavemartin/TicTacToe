@@ -5,9 +5,6 @@ Class {
 		'aGame',
 		'value'
 	],
-	#classInstVars : [
-		'aGame'
-	],
 	#category : #TicTacToe
 }
 
@@ -22,19 +19,9 @@ TicTacToePlayer class >> represents: aValue [
 { #category : #'as yet unclassified' }
 TicTacToePlayer class >> with: aTicTacToeGame [ 
 	| aTicTacToePlayer |
-	aTicTacToePlayer := TicTacToePlayer new.
+	aTicTacToePlayer := self new.
 	aTicTacToePlayer playingAt: aTicTacToeGame .
 	^aTicTacToePlayer
-]
-
-{ #category : #'as yet unclassified' }
-TicTacToePlayer >> playingAt: aTicTacToeGame [
-	aGame := aTicTacToeGame
-]
-
-{ #category : #'as yet unclassified' }
-TicTacToePlayer >> plays: aValue to: aSquarePosition [ 
-	aGame set: aValue at: aSquarePosition .
 ]
 
 { #category : #'as yet unclassified' }

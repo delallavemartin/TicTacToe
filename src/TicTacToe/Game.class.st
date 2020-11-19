@@ -6,9 +6,6 @@ Class {
 		'playerOne',
 		'playerTwo'
 	],
-	#classInstVars : [
-		'aBoard'
-	],
 	#category : #TicTacToe
 }
 
@@ -65,9 +62,4 @@ Game >> set: aValue at: anSquarePosition [
 	"Rollback play & throw exception"
 	aBoard clearAt: anSquarePosition.
 	InvalidStateException  signal 
-]
-
-{ #category : #'as yet unclassified' }
-Game >> with: aTicTacToeBoard [ 
-	aBoard := aTicTacToeBoard 
 ]

@@ -4,15 +4,12 @@ Class {
 	#instVars : [
 		'squares'
 	],
-	#classInstVars : [
-		'aGrid'
-	],
 	#category : #TicTacToe
 }
 
 { #category : #'as yet unclassified' }
 TicTacToeBoard class >> create [
-	| aTicTacToeBoard |
+	| aTicTacToeBoard aGrid |
 	aTicTacToeBoard := self new.
 	aGrid := Dictionary new.
 	aGrid at:#first put: Square new.
