@@ -56,6 +56,11 @@ Game >> playerOnePlaysAt: anSquarePosition [
 ]
 
 { #category : #'as yet unclassified' }
+Game >> playerTwoPlaysAt: anSquarePostion [
+	self set: playerTwo represents at: anSquarePostion . 
+]
+
+{ #category : #'as yet unclassified' }
 Game >> set: aValue at: anSquarePosition [ 
 	aBoard fillWith: aValue at: anSquarePosition.
 	(aBoard isValid) ifTrue: [ ^self ] .

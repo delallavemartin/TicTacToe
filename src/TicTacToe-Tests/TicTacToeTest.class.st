@@ -86,6 +86,18 @@ TicTacToeTest >> testBoardSetsXandOAndIsValid [
 ]
 
 { #category : #'as yet unclassified' }
+TicTacToeTest >> testGameExecutePlayerOneAndPlayerTwoPlays [
+	
+	aGame playerOnePlaysAt: #fifth .
+	aGame playerTwoPlaysAt: #third .
+	
+	self assert: (aGame has: 'X' on: #fifth ).
+	self assert: (aGame has: 'O' on: #third ).
+	
+
+]
+
+{ #category : #'as yet unclassified' }
 TicTacToeTest >> testGameExecutePlayerOnePlay [
 	
 	aGame playerOnePlaysAt: #fifth .
