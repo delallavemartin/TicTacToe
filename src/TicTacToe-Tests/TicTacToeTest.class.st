@@ -28,6 +28,33 @@ TicTacToeTest >> setUp [
 ]
 
 { #category : #'as yet unclassified' }
+TicTacToeTest >> testBoardHasOneMoreOThanXThenIsInvalid [
+	
+	aBoard fillWith: 'O' at: #fifth.
+	
+	self deny: aBoard isValid .
+	
+
+]
+
+{ #category : #'as yet unclassified' }
+TicTacToeTest >> testBoardHasOneXMoreThanOThenIsValid [
+	
+	aBoard fillWith: 'X' at: #fifth.
+	
+	self assert: aBoard isValid .
+	
+
+]
+
+{ #category : #'as yet unclassified' }
+TicTacToeTest >> testBoardIsCreated [ 
+
+	self assert: aBoard isFull .
+
+]
+
+{ #category : #'as yet unclassified' }
 TicTacToeTest >> testBoardSetsOOnRightBottomSquare [
 	
 	aBoard fillWith: 'O' at: #nineth .
@@ -48,49 +75,24 @@ TicTacToeTest >> testBoardSetsXOnCenter [
 ]
 
 { #category : #'as yet unclassified' }
-TicTacToeTest >> testCreateATicTacToeBoard [ 
+TicTacToeTest >> testBoardSetsXandOAndIsValid [
 
-	self assert: aBoard isFull .
+	aBoard fillWith: 'X' at: #fifth.
+	aBoard fillWith: 'O' at: #third .
+	
+	self assert: aBoard isValid .
+	
 
 ]
 
 { #category : #'as yet unclassified' }
-TicTacToeTest >> testCreateAnEmptySquare [
+TicTacToeTest >> testGameExecutePlayerOnePlay [
 	
-	self assert: anSquare notNil.
-]
+	aGame playerOnePlaysAt: #fifth .
+	
+	self assert: (aGame has: 'X' on: #fifth ).
+	
 
-{ #category : #'as yet unclassified' }
-TicTacToeTest >> testCreateAnSquareWithExistantValue [
-	
-	anSquare with: 'X'.
-	
-	self assert: [anSquare with: 'Y'.] expected: SquareAlreadyFilledException .
-	
-	
-]
-
-{ #category : #'as yet unclassified' }
-TicTacToeTest >> testCreateAnSquareWithInvalidValue [
-	
-	self assert: [anSquare with: 'S'.] expected: InvalidSquareValueException .
-	
-]
-
-{ #category : #'as yet unclassified' }
-TicTacToeTest >> testCreateAnSquareWithO [
-
-	anSquare with: 'O'.
-	
-	self assert: anSquare isO.
-]
-
-{ #category : #'as yet unclassified' }
-TicTacToeTest >> testCreateAnSquareWithX [
-
-	anSquare with: 'X'.
-	
-	self assert: anSquare isX.
 ]
 
 { #category : #'as yet unclassified' }
@@ -120,53 +122,46 @@ TicTacToeTest >> testGameStartsAndIsValid [
 ]
 
 { #category : #'as yet unclassified' }
-TicTacToeTest >> testPlayerOneSetAnXOnFifthSquare [
-	
-	| playerOne |
-	playerOne := TicTacToePlayer with: aGame.
-	
-	playerOne plays: 'X' to: #fifth .
-	
-	self assert: (aGame has: 'X' on: #fifth ).
-	
-
+TicTacToeTest >> testGameStartsWithBoardFullAndTwoPlayers [
+	self assert: aGame boardIsFull . 
+	self assert: aGame hasTwoPlayers .
 ]
 
 { #category : #'as yet unclassified' }
-TicTacToeTest >> testWhenBoardHasOneMoreOThanXThenIsInvalid [
+TicTacToeTest >> testSquareIsCreatedEmpty [
 	
-	aBoard fillWith: 'O' at: #fifth.
-	
-	self deny: aBoard isValid .
-	
-
+	self assert: anSquare notNil.
 ]
 
 { #category : #'as yet unclassified' }
-TicTacToeTest >> testWhenBoardHasOneXMoreThanOThenIsValid [
+TicTacToeTest >> testSquareWithExistantValueThenError [
 	
-	aBoard fillWith: 'X' at: #fifth.
+	anSquare with: 'X'.
 	
-	self assert: aBoard isValid .
+	self assert: [anSquare with: 'Y'.] expected: SquareAlreadyFilledException .
 	
-
+	
 ]
 
 { #category : #'as yet unclassified' }
-TicTacToeTest >> testWhenBothHavePlayOneTimeThenIsValid [
-
-	aBoard fillWith: 'X' at: #fifth.
-	aBoard fillWith: 'O' at: #third .
+TicTacToeTest >> testSquareWithInvalidValue [
 	
-	self assert: aBoard isValid .
+	self assert: [anSquare with: 'S'.] expected: InvalidSquareValueException .
 	
-
 ]
 
 { #category : #'as yet unclassified' }
-TicTacToeTest >> testWhenGameStartsTheBoardIsFull [
-	
-	self assert: aGame board isFull .
-	
+TicTacToeTest >> testSquareWithO [
 
+	anSquare with: 'O'.
+	
+	self assert: anSquare isO.
+]
+
+{ #category : #'as yet unclassified' }
+TicTacToeTest >> testSquareWithX [
+
+	anSquare with: 'X'.
+	
+	self assert: anSquare isX.
 ]

@@ -2,13 +2,22 @@ Class {
 	#name : #TicTacToePlayer,
 	#superclass : #Object,
 	#instVars : [
-		'aGame'
+		'aGame',
+		'value'
 	],
 	#classInstVars : [
 		'aGame'
 	],
 	#category : #TicTacToe
 }
+
+{ #category : #'as yet unclassified' }
+TicTacToePlayer class >> represents: aValue [ 
+	| aPlayer |
+	aPlayer := TicTacToePlayer new.
+	aPlayer value: aValue.
+	^aPlayer
+]
 
 { #category : #'as yet unclassified' }
 TicTacToePlayer class >> with: aTicTacToeGame [ 
@@ -26,4 +35,14 @@ TicTacToePlayer >> playingAt: aTicTacToeGame [
 { #category : #'as yet unclassified' }
 TicTacToePlayer >> plays: aValue to: aSquarePosition [ 
 	aGame set: aValue at: aSquarePosition .
+]
+
+{ #category : #'as yet unclassified' }
+TicTacToePlayer >> represents [
+	^value .
+]
+
+{ #category : #'as yet unclassified' }
+TicTacToePlayer >> value: aValue [ 
+	value:=aValue.
 ]
