@@ -86,6 +86,20 @@ TicTacToeTest >> testBoardSetsXandOAndIsValid [
 ]
 
 { #category : #'as yet unclassified' }
+TicTacToeTest >> testGameEndedAndPlayerOneWins [
+	
+	aGame playerOnePlaysAt: #fifth .
+	aGame playerTwoPlaysAt: #second .
+	aGame playerOnePlaysAt: #third  .
+	aGame playerTwoPlaysAt: #fourth  .
+	aGame playerOnePlaysAt: #seventh .		
+		
+	self assert: aGame result equals: 'Player1'.
+	
+
+]
+
+{ #category : #'as yet unclassified' }
 TicTacToeTest >> testGameExecutePlayerOneAndPlayerTwoPlays [
 	
 	aGame playerOnePlaysAt: #fifth .
@@ -103,6 +117,24 @@ TicTacToeTest >> testGameExecutePlayerOnePlay [
 	aGame playerOnePlaysAt: #fifth .
 	
 	self assert: (aGame has: 'X' on: #fifth ).
+	
+
+]
+
+{ #category : #'as yet unclassified' }
+TicTacToeTest >> testGameHasEndedDraw [
+	
+	aGame playerOnePlaysAt: #first .
+	aGame playerTwoPlaysAt: #second .
+	aGame playerOnePlaysAt: #third  .
+	aGame playerTwoPlaysAt: #fourth  .
+   aGame playerOnePlaysAt: #fifth .
+	aGame playerTwoPlaysAt: #sixth .
+	aGame playerOnePlaysAt: #seventh .
+	aGame playerTwoPlaysAt: #eighth  .	
+	aGame playerOnePlaysAt: #nineth  .			
+		
+	self assert: (aGame result) equals: 'Draw' .
 	
 
 ]

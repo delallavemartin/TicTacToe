@@ -41,6 +41,12 @@ TicTacToeBoard >> fillWith: aValue at: aKey [
 ]
 
 { #category : #'as yet unclassified' }
+TicTacToeBoard >> isFilled [
+	squares valuesDo: [ :anSquare | (anSquare hasValue) ifFalse: [ ^false ] ] .
+	^true .
+]
+
+{ #category : #'as yet unclassified' }
 TicTacToeBoard >> isFull [
 	^(((self squareAt: #first) class) = Square )|
 	(((self squareAt: #second) class) = Square )|

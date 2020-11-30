@@ -60,6 +60,13 @@ Game >> playerTwoPlaysAt: anSquarePostion [
 ]
 
 { #category : #'as yet unclassified' }
+Game >> result [
+	(aBoard isFilled) 
+		ifTrue: [ ^'Draw' ]
+		ifFalse: [ ^'Player1' ] 
+]
+
+{ #category : #'as yet unclassified' }
 Game >> set: aValue at: anSquarePosition [ 
 	aBoard fillWith: aValue at: anSquarePosition.
 	(aBoard isValid) ifTrue: [ ^self ] .

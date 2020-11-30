@@ -34,6 +34,11 @@ Square >> clear [
 	value := ''
 ]
 
+{ #category : #'as yet unclassified' }
+Square >> hasValue [
+	^(value = '') not .
+]
+
 { #category : #initialization }
 Square >> initialize [
 	value:=''
