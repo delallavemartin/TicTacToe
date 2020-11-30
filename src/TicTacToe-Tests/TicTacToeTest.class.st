@@ -100,6 +100,21 @@ TicTacToeTest >> testGameEndedAndPlayerOneWins [
 ]
 
 { #category : #'as yet unclassified' }
+TicTacToeTest >> testGameEndedAndPlayerTwoWins [
+	
+	aGame playerOnePlaysAt: #first .
+	aGame playerTwoPlaysAt: #fifth .
+	aGame playerOnePlaysAt: #fourth .
+	aGame playerTwoPlaysAt: #third .
+	aGame playerOnePlaysAt: #eighth .
+	aGame playerTwoPlaysAt: #seventh .		
+		
+	self assert: aGame result equals: 'Player2'.
+	
+
+]
+
+{ #category : #'as yet unclassified' }
 TicTacToeTest >> testGameExecutePlayerOneAndPlayerTwoPlays [
 	
 	aGame playerOnePlaysAt: #fifth .

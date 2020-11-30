@@ -62,8 +62,10 @@ Game >> playerTwoPlaysAt: anSquarePostion [
 { #category : #'as yet unclassified' }
 Game >> result [
 	(aBoard isFilled) 
-		ifTrue: [ ^'Draw' ]
-		ifFalse: [ ^'Player1' ] 
+		ifTrue: [ ^'Draw' ] .
+	^'Player1'.
+	"TODO won logic"	
+		
 ]
 
 { #category : #'as yet unclassified' }
