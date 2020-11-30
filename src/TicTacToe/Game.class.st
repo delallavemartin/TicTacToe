@@ -13,7 +13,7 @@ Class {
 Game class >> start [
 	| aGame |
 	aGame := self new.
-	aGame board: TicTacToeBoard create playerOne: 'X' andPlayer: 'O' .
+	aGame board: TicTacToeBoard create playerOne: 'X' andPlayerTwo: 'O' .
 	^aGame
 ]
 
@@ -23,11 +23,10 @@ Game >> board [
 ]
 
 { #category : #'as yet unclassified' }
-Game >> board: aTicTacToeBoard playerOne: aValue1 andPlayer: aValue2 [
+Game >> board: aTicTacToeBoard playerOne: aValue1 andPlayerTwo: aValue2 [
 	aBoard := aTicTacToeBoard.
 	playerOne := TicTacToePlayer represents: aValue1.
 	playerTwo := TicTacToePlayer represents: aValue2.
-	^self
 ]
 
 { #category : #'as yet unclassified' }
